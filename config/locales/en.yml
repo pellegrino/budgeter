@@ -7,6 +7,14 @@ en:
       title: "Transactions" 
     new: 
       href: "New transaction" 
+      title: "New transaction" 
       
-    
+  money:
+    conversion:
+      error: "Can't convert %{value} to Money" 
 
+
+  activemodel:
+    attributes:
+      transaction:
+        title: "DASDASDA"

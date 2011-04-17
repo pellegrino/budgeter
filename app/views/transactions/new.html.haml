@@ -1,0 +1,12 @@
+%h1 
+  = t "transactions.new.title" 
+
+%p= t "activemodel.attribute.transaction.title" 
+
+
+#new-transaction
+  = semantic_form_for @transaction  do |f|
+    = f.inputs 
+    = f.buttons
+  -
+

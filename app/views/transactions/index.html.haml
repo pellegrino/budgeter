@@ -1,6 +1,11 @@
 %h1 
   = t "transactions.index.title" 
   
+%ul#transactions
+  - @transactions.each do |transaction|
+    %li
+      %p= transaction.title 
+  -
 #actions
   %p
     = link_to t("transactions.new.href") , new_transaction_path 
