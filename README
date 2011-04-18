@@ -19,7 +19,7 @@ I poorly speak english, but my wife doesn't at all. It should be
 usable to non-english speakers. 
 
 === Friendly 
-It should be grandma usable - mine won't use it, but maybe yours will
+It should be grandma usable - mine probably won't use it, but maybe yours will
 end up doing, so better have it in place. 
 
 === Have multiple users
@@ -42,6 +42,7 @@ Adjust the currency in config/environment.rb according to your needs.
 == GEMS I USE:
 
 === Testing
+Domino (http://github.com/ngauthier/domino) For abstracting DOM from my integration tests. Check http://www.ngauthier.com/2011/02/view-abstraction-in-integration-tests_05.html for further details. 
 
 
 == HOW TO CONTRIBUTE: 
@@ -51,17 +52,12 @@ Adjust the currency in config/environment.rb according to your needs.
 - Please, don't forget to add tests (both integration, units and functionals) 
 - Make sure to localize every string you've used (at least) in english. Check config/locales/en.yml for details  
 
-*TODO* 
-
 == THANKS TO: 
 
-Jamis, for developing bucketwise which gave me all the inspiration to
-do the same to my family needs. 
-Gregory Brown, for Ruby Mendicant University and his dedication to the
-Ruby Community, which have ignited my desire to also contribute somehow.
+Jamis (http://github.com/jamis), for developing bucketwise which gave me all the inspiration to do the same to my family needs. 
+Gregory Brown (http://github.com/sandal), for Ruby Mendicant University and his dedication to the Ruby Community, which have ignited my desire to also contribute somehow.
 
 == LICENSE:
 
 You may copy, distribute... blah blah, just don't forget add proper credits. 
   - Vitor Pellegrino (author), April 2011
-
