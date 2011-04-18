@@ -1,17 +1,28 @@
-%h1 
-  = t "transactions.index.title" 
-%p#explanation
-  = t "transactions.index.explanation" 
+%h1
+  = t "transactions.index.title"
+
+#menu
+  - if @accounts.present?
+    %ul#accounts
+      - @accounts.each do |account|
+        %li
+          %span#name=account.name
+      -
+  - else
+    %p.explanation
+      = t "transactions.index.no_account"
+  -
+
+%p.explanation
+  = t "transactions.index.explanation"
 
 %ul#transactions
   - @transactions.each do |transaction|
     %li
-      %span#title=transaction.title 
-      %span#amount=transaction.amount 
-      %span#account=transaction.account.name unless transaction.account.nil? 
+      %span#title=transaction.title
+      %span#amount=transaction.amount
+      %span#account=transaction.account.name unless transaction.account.nil?
   -
 #actions
   %p
-    = link_to t("transactions.new.href") , new_transaction_path 
-
-
+    = link_to t("transactions.new.href") , new_transaction_path

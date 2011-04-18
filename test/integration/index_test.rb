@@ -1,6 +1,21 @@
 require 'test_helper'
 
 class IndexTest < ActionDispatch::IntegrationTest
+
+  test "displays a blankslate message only when there isn't accounts" do
+    visit transactions_path
+    assert_empty Dom::Account.all
+    assert page.has_content? I18n.t("transactions.index.no_account")
+    
+    visit new_account_path 
+    Dom::Account.create :name => "Credit Card" , :initial_balance => "100,00" 
+    
+    visit transactions_path
+    refute page.has_content? I18n.t("transactions.index.no_account")
+    assert_equal "Credit Card", Dom::Account.all.first.name 
+  end
+
+  
   test "shows a transaction input form" do
     visit transactions_path 
     

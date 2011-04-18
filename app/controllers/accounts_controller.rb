@@ -1,5 +1,5 @@
 class  AccountsController < InheritedResources::Base
   def create
-    create! { transactions_url } 
-  end 
+    create! { transactions_url }
+  end
 end

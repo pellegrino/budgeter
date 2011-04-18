@@ -1,15 +1,11 @@
 require 'test_helper'
 
 class TransactionsControllerTest < ActionController::TestCase
-  
-  test "should get index" do
-    get :index
-    assert_response :success
-  end
 
-  test "prepare a transaction to be created" do
-    get :new
-    assert_response :success
-    refute_nil assigns[:transaction]
-  end 
+  test "gets every transaction given an account name" do
+    @transactions  = [ Transaction.new(:title => 'foo') ]
+    mock(Transaction).for_an_account_name('foo') { @transactions }
+    get :account, :name => "foo"
+    assert_equal @transactions, assigns[:transactions]
+  end
 end

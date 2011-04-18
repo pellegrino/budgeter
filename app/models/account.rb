@@ -1,6 +1,7 @@
 class Account < ActiveRecord::Base
   has_many :transactions
-  
+  validates_uniqueness_of :name, :case_sensitive => false
+    
   composed_of :initial_balance,
   :class_name => "Money",
   :mapping => [%w(cents cents), %w(currency currency_as_string)],

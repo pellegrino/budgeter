@@ -1,16 +1,18 @@
- - Add transactions (ok) 
- - List transactions
-        - Handle currencies correctly (format in R$, $, $u...) 
- - Multiple Accounts (Credit card, bank... wallet) 
- - Associate a transaction to an account  (OK) 
- - Filter transactions per account 
+ - Add transactions (ok)
+ - List transactions (ok)
+ - Multiple Accounts (Credit card, bank... wallet) (ok)
+ - Associate a transaction to an account  (OK)
+ - Filter transactions per account
  - Tag transactions
- - Login 
- - Multiple users 
- - Basic reporting about spending 
+ - Handle currencies correctly (format in R$, $, $u...)
+ - Login
+ - Multiple users
+ - Basic reporting about spending
+ - Handling recurring payments/spending
+ - Improve overall responsiveness of the app (Ajax filtering of
+   transactions, for instance)
 
 
-
-- General Issues 
-        - Asset packaging 
-        - CI 
+ - General Issues
+         - Asset packaging
+         - CI

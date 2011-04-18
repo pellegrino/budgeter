@@ -1,0 +1,13 @@
+%h1
+  = t "transactions.account.title", :name => "foo"
+
+
+- if @transactions.present?
+  %ul#transactions
+    - @transactions.each do |transaction|
+      %li
+        = transaction.title
+    -
+- else
+  = t("transactions.account.no_transaction")
+-

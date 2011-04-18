@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(:version => 20110418123719) do
     t.datetime "updated_at"
   end
 
+  add_index "accounts", ["name"], :name => "index_accounts_on_name", :unique => true
+
   create_table "transactions", :force => true do |t|
     t.string   "title"
     t.integer  "cents"
@@ -29,5 +31,7 @@ ActiveRecord::Schema.define(:version => 20110418123719) do
     t.datetime "updated_at"
     t.integer  "account_id"
   end
+
+  add_index "transactions", ["account_id"], :name => "index_transactions_on_account_id"
 
 end

@@ -1,3 +1,4 @@
+$:.unshift File.join(File.dirname(__FILE__), "..", "lib")
 require 'test_helper'
 
 class AccountsControllerTest < ActionController::TestCase
@@ -5,5 +6,4 @@ class AccountsControllerTest < ActionController::TestCase
     get :new
     assert_response :success
   end
-
 end

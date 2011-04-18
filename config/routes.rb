@@ -1,7 +1,9 @@
 Budgeter::Application.routes.draw do
-  get "accounts/new"
-
-  resources :transactions
-  resources :accounts 
+  resources :transactions do
+    collection do
+      get "accounts/:name" , :action => :account , :as => "account"
+    end
+  end
+  resources :accounts
   root :to => "transactions#index"
 end

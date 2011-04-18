@@ -1,7 +1,7 @@
 # Sample localization file for English. Add more files in this directory for other locales.
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
-en: 
+en:
   formtastic:
     titles:
       transaction_general_info: "General information"
@@ -9,39 +9,44 @@ en:
     labels:
       transaction:
         title: "Title"
-        amount: "Total spent" 
-        account_id: "Account" 
-      account: 
+        amount: "Total spent"
+        account_id: "Account"
+      account:
         name: "Name"
         initial_balance: "Initial Balance"
 
     hints:
       transaction:
-        title: "Quick description of this expense" 
+        title: "Quick description of this expense"
         amount: "How much? Ex: 1500.00"
-        account_id: "Account which the money for this transaction is drawn from" 
+        account_id: "Account which the money for this transaction is drawn from"
 
       account:
         name: "How is this account labeled? Credit Card, Joint account, my wallet?"
-        initial_balance: "How many bucks are there right now?" 
+        initial_balance: "How many bucks are there right now?"
 
   accounts:
     new:
-      title: "Create a new account" 
-      explanation: "Create your new account in this form. Don't forget to insert your initial balance." 
+      title: "Create a new account"
+      explanation: "Create your new account in this form. Don't forget to insert your initial balance."
     index:
-      title: "My accounts" 
-      explanation: "Here are all your accounts" 
-      
-  transactions:
-    index: 
-      title: "Transactions" 
-      explanation: "Here are the last transactions you've recorded at Budgeter. You can use the link below to 'Record a new transaction', and *really* soon you will be able to track multiple accounts here." 
+      title: "My accounts"
+      explanation: "Here are all your accounts"
 
-    new: 
+  transactions:
+    index:
+      title: "Transactions"
+      explanation: "Here are the last transactions you've recorded at Budgeter. You can use the link below to 'Record a new transaction', and *really* soon you will be able to track multiple accounts here."
+      no_account: "It seems you don't have any accounts registered at budgeter, why don't you start by <a href='%{create_account_url}'>creating one</a>?"
+
+    new:
       href: "Record a new transaction"
-      title: "Record a new transaction" 
-      
+      title: "Record a new transaction"
+
+    account:
+      title: "Transactions for account %{name}"
+      no_transaction: "No transactions for this account. Why don't you start by creating your first transaction?"
+
   money:
     conversion:
-      error: "Can't convert %{value} to Money" 
+      error: "Can't convert %{value} to Money"
