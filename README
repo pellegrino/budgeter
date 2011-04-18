@@ -46,6 +46,11 @@ Adjust the currency in config/environment.rb according to your needs.
 
 == HOW TO CONTRIBUTE: 
 
+- Fork the project
+- Implement your feature/fix/improvement/etc... 
+- Please, don't forget to add tests (both integration, units and functionals) 
+- Make sure to localize every string you've used (at least) in english. Check config/locales/en.yml for details  
+
 *TODO* 
 
 == THANKS TO: 
@@ -53,11 +58,10 @@ Adjust the currency in config/environment.rb according to your needs.
 Jamis, for developing bucketwise which gave me all the inspiration to
 do the same to my family needs. 
 Gregory Brown, for Ruby Mendicant University and his dedication to the
-Ruby Community 
-
+Ruby Community, which have ignited my desire to also contribute somehow.
 
 == LICENSE:
 
-This 
+You may copy, distribute... blah blah, just don't forget add proper credits. 
   - Vitor Pellegrino (author), April 2011
 
