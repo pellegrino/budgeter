@@ -9,8 +9,8 @@ module Formtastic
     def cancel_link(path)
       text = I18n.t('cancel', :default => 'Cancel')
 
-      template.content_tag(:li, :class => 'cancel') do
-        template.link_to(text, path) 
+      template.content_tag(:li) do
+        template.link_to(text, path, :class =>'cancel') 
       end
     end
   end

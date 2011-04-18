@@ -15,6 +15,9 @@ class ActionDispatch::IntegrationTest
 end
 
 module Dom
+  class Account < Domino
+    selector '#accounts li'
+  end 
   class Transaction < Domino
     selector '#transactions li'
     attribute :title, 'span#title'

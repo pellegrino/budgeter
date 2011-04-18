@@ -10,10 +10,26 @@ en:
       transaction:
         title: "Title"
         amount: "Total spent" 
+      account: 
+        name: "Name"
+        initial_balance: "Initial Balance"
+
     hints:
       transaction:
         title: "Quick description of this expense" 
         amount: "How much? Ex: 1500.00"
+
+      account:
+        name: "How is this account labeled? Credit Card, Joint account, my wallet?"
+        initial_balance: "How many bucks are there right now?" 
+
+  accounts:
+    new:
+      title: "Create a new account" 
+      explanation: "Create your new account in this form. Don't forget to insert your initial balance." 
+    index:
+      title: "My accounts" 
+      explanation: "Here are all your accounts" 
       
   transactions:
     index: 

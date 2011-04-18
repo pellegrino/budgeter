@@ -1,7 +1,9 @@
- - Add transactions 
+ - Add transactions (ok) 
  - List transactions
         - Handle currencies correctly (format in R$, $, $u...) 
  - Multiple Accounts (Credit card, bank... wallet) 
+ - Associate a transaction to an account 
+ - Tag transactions
  - Login 
  - Multiple users 
  - Basic reporting about spending 
@@ -11,4 +13,3 @@
 - General Issues 
         - Asset packaging 
         - CI 
-        - Deploy first version 
