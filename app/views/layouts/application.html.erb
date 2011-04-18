@@ -2,11 +2,15 @@
 <html>
 <head>
   <title>Budgeter</title>
-  <%= stylesheet_link_tag :flutie %>
+  <%= stylesheet_link_tag :flutie , "base"  %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-<%= yield %>
-<%= javascript_include_tag :all %>
+  <div id="container">
+    <div id="main">
+      <%= yield %>
+    </div> 
+  </div>
+  <%= javascript_include_tag :all %>
 </body>
 </html>

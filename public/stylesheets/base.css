@@ -1,0 +1,24 @@
+body {
+    background-color: #DADADA;
+}
+#container {
+    width: 960px; 
+    margin: 0 auto;
+    padding: 1.2em;
+    background-color: #FFF;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border-top-left-radius: 1em 1em;
+    border-top-right-radius: 1em 1em;
+    border-bottom-right-radius: 1em 1em;
+    border-bottom-left-radius: 1em 1em;
+}
+
+#main {
+    padding: 1em;
+}
+
+#main .long-text {
+    font-size: 1.2em;
+    font-family: Helvetica;
+}

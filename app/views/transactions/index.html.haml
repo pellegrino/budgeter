@@ -1,6 +1,8 @@
 %h1 
   = t "transactions.index.title" 
-  
+%p#explanation
+  = t "transactions.index.explanation" 
+
 %ul#transactions
   - @transactions.each do |transaction|
     %li

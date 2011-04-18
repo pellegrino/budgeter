@@ -18,6 +18,8 @@ en:
   transactions:
     index: 
       title: "Transactions" 
+      explanation: "Here are the last transactions you've recorded at Budgeter. You can use the link below to 'Record a new transaction', and *really* soon you will be able to track multiple accounts here." 
+
     new: 
       href: "Record a new transaction"
       title: "Record a new transaction" 
