@@ -1,5 +1,6 @@
- - Add transactions
+ - Add transactions 
  - List transactions
+        - Handle currencies correctly (format in R$, $, $u...) 
  - Multiple Accounts (Credit card, bank... wallet) 
  - Login 
  - Multiple users 

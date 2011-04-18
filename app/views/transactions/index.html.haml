@@ -4,7 +4,8 @@
 %ul#transactions
   - @transactions.each do |transaction|
     %li
-      %p= transaction.title 
+      %span#title=transaction.title 
+      %span#amount=transaction.amount 
   -
 #actions
   %p

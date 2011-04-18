@@ -31,6 +31,12 @@ their expenses at Budgeter, so each one should have it own account.
 
 === Heroku 
 
+=== Configure 
+Adjust the currency in config/environment.rb according to your needs. 
+
+<code>Money.default_currency = Money::Currency.new("USD")</code>
+
+
 * TODO* 
 
 == GEMS I USE:

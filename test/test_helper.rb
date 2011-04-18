@@ -5,6 +5,7 @@ require 'dominos' # used for integration tests
 require 'factory_girl'
 
 class ActiveSupport::TestCase
+  Money.default_currency = Money::Currency.new("USD")
   # Add more helper methods to be used by all tests here...
 end
 
@@ -16,11 +17,14 @@ end
 module Dom
   class Transaction < Domino
     selector '#transactions li'
-    attribute :title, 'p'
+    attribute :title, 'span#title'
+    attribute :amount, "span#amount" 
 
     def self.create(params)
       within('form') do
-        fill_in :transction_title , :with => params[:title] 
+        fill_in "transaction_title" , :with => params[:title]
+        fill_in "transaction_amount", :with => params[:amount] 
+        
         click_button :transaction_submit 
       end
     end 
