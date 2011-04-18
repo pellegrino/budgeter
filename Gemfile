@@ -6,6 +6,7 @@ gem 'sqlite3'
 gem "money"
 gem 'formtastic' 
 gem 'inherited_resources' 
+gem 'flutie' # for layout awesomeness  
 
 group :test do
   gem 'domino'
