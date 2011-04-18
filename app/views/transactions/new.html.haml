@@ -1,13 +1,17 @@
 %h1= t "transactions.new.title" 
 
 #new-transaction
-  = semantic_form_for @transaction  do |f|
-    = f.inputs :transaction_general_info do 
-      = f.inputs :title , :amount 
-    - 
-    = f.buttons do
-      = f.commit_button :button_html => { :class => "primary" } 
-      = f.cancel_link transactions_path 
-    - 
-  -
+  = semantic_form_for @transaction  do |form|
+    = form.semantic_errors 
+    = form.inputs :transaction_general_info do 
+      = form.inputs :title, :amount 
+      -# TODO: Replace this ugly call for something more elegant such as = form.input :account 
+      = form.input :account_id, :as => :select , :collection => Account.all
+    -
 
+
+    = form.buttons  do
+      = form.commit_button :button_html => { :class => "primary" } 
+      = form.cancel_link transactions_path 
+    -
+  - 

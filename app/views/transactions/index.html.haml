@@ -8,6 +8,7 @@
     %li
       %span#title=transaction.title 
       %span#amount=transaction.amount 
+      %span#account=transaction.account.name unless transaction.account.nil? 
   -
 #actions
   %p

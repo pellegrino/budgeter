@@ -15,5 +15,14 @@ class TransactionTest < ActiveModel::TestCase
     assert_raises(ArgumentError) do 
       @transaction.amount = nil
     end
-  end 
+  end
+  
+  # TODO: rewrite this in a shoulda belongs_to like assert 
+  test "associate to an account" do
+    assert Transaction.reflect_on_association(:account)
+    
+    account = Factory(:account)
+    transaction = Transaction.create(:account => account, :title => "foo") 
+    assert_equal "Credit Card", Transaction.last.account.name 
+  end
 end

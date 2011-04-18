@@ -22,11 +22,13 @@ module Dom
     selector '#transactions li'
     attribute :title, 'span#title'
     attribute :amount, "span#amount" 
-
+    attribute :account, "span#account"
+    
     def self.create(params)
       within('form') do
         fill_in "transaction_title" , :with => params[:title]
-        fill_in "transaction_amount", :with => params[:amount] 
+        fill_in "transaction_amount", :with => params[:amount]
+        page.select params[:account].name , :from => "transaction_account_id"
         
         click_button :transaction_submit 
       end

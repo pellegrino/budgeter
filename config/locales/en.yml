@@ -10,6 +10,7 @@ en:
       transaction:
         title: "Title"
         amount: "Total spent" 
+        account_id: "Account" 
       account: 
         name: "Name"
         initial_balance: "Initial Balance"
@@ -18,6 +19,7 @@ en:
       transaction:
         title: "Quick description of this expense" 
         amount: "How much? Ex: 1500.00"
+        account_id: "Account which the money for this transaction is drawn from" 
 
       account:
         name: "How is this account labeled? Credit Card, Joint account, my wallet?"

@@ -2,7 +2,8 @@
  - List transactions
         - Handle currencies correctly (format in R$, $, $u...) 
  - Multiple Accounts (Credit card, bank... wallet) 
- - Associate a transaction to an account 
+ - Associate a transaction to an account  (OK) 
+ - Filter transactions per account 
  - Tag transactions
  - Login 
  - Multiple users 

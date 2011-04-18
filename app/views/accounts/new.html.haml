@@ -4,7 +4,8 @@
   = t "accounts.new.explanation" 
 
 = semantic_form_for @account do |form|
-  = form.inputs :name, :initial_balance 
+  = form.inputs :name, :initial_balance
+
   = form.buttons  do 
     = form.commit_button
     = form.cancel_link accounts_path 
