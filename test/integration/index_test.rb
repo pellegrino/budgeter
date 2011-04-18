@@ -3,7 +3,8 @@ require 'test_helper'
 class IndexTest < ActionDispatch::IntegrationTest
   test "shows a transaction input form" do
     visit transactions_path 
-    assert page.has_content?("New transaction")
+    
+    assert page.has_content? I18n.t("transactions.new.href") 
     assert page.has_css?("a[href='#{new_transaction_path}']") 
   end
   

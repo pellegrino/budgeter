@@ -1,5 +1,21 @@
 # encoding: utf-8
 
+# TODO: replace this ugly hack as soon as formtastic supports cancel
+# link into its DSL
+# @see https://groups.google.com/forum/#!topic/formtastic/-aRS9d6uiss
+
+module Formtastic
+  class SemanticFormBuilder
+    def cancel_link(path)
+      text = I18n.t('cancel', :default => 'Cancel')
+
+      template.content_tag(:li, :class => 'cancel') do
+        template.link_to(text, path) 
+      end
+    end
+  end
+end
+
 # --------------------------------------------------------------------------------------------------
 # Please note: If you're subclassing Formtastic::SemanticFormBuilder in a Rails 3 project, 
 # Formtastic uses class_attribute for these configuration attributes instead of the deprecated 
@@ -73,8 +89,9 @@
 # Specifies if labels/hints for input fields automatically be looked up using I18n.
 # Default value: false. Overridden for specific fields by setting value to true,
 # i.e. :label => true, or :hint => true (or opposite depending on initialized value)
-# Formtastic::SemanticFormBuilder.i18n_lookups_by_default = false
+Formtastic::SemanticFormBuilder.i18n_lookups_by_default = true
 
 # You can add custom inputs or override parts of Formtastic by subclassing SemanticFormBuilder and
 # specifying that class here.  Defaults to SemanticFormBuilder.
 # Formtastic::SemanticFormHelper.builder = MyCustomBuilder
+

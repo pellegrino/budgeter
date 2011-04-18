@@ -1,9 +1,12 @@
-%h1 
-  = t "transactions.new.title" 
-
+%h1= t "transactions.new.title" 
 #new-transaction
   = semantic_form_for @transaction  do |f|
-    = f.inputs :title , :amount 
-    = f.buttons
+    = f.inputs :transaction_general_info do 
+      = f.inputs :title , :amount 
+    - 
+    = f.buttons do
+      = f.commit_button :button_html => { :class => "primary" } 
+      = f.cancel_link transactions_path 
+    - 
   -
 

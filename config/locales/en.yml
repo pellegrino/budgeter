@@ -2,19 +2,26 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en: 
+  formtastic:
+    titles:
+      transaction_general_info: "General information"
+
+    labels:
+      transaction:
+        title: "Title"
+        amount: "Total spent" 
+    hints:
+      transaction:
+        title: "Quick description of this expense" 
+        amount: "How much? Ex: 1500.00"
+      
   transactions:
     index: 
       title: "Transactions" 
     new: 
-      href: "New transaction" 
-      title: "New transaction" 
+      href: "Record a new transaction"
+      title: "Record a new transaction" 
       
   money:
     conversion:
       error: "Can't convert %{value} to Money" 
-
-
-  activemodel:
-    attributes:
-      transaction:
-        title: "DASDASDA"

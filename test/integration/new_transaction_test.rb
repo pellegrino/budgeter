@@ -12,5 +12,12 @@ class NewTransactionTest < ActionDispatch::IntegrationTest
     refute_nil transaction
     assert_equal "foo", transaction.title
     assert_equal "12345.00", transaction.amount 
+  end
+
+  test "cancels this transactions and go back to transactions listing" do
+    click_link "Cancel"
+    assert_empty Dom::Transaction.all
+    assert_equal transactions_path , current_path
   end 
 end
+
