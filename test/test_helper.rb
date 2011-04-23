@@ -3,7 +3,6 @@ $:.unshift File.join(File.dirname(__FILE__), "..", "lib")
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
-require 'dominos' # used for integration tests
 require 'factory_girl'
 
 class ActiveSupport::TestCase
