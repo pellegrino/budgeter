@@ -1,6 +1,7 @@
 class Transaction < ActiveRecord::Base
+  acts_as_taggable
   belongs_to :account
-  
+
   composed_of :amount,
   :class_name => "Money",
   :mapping => [%w(cents cents), %w(currency currency_as_string)],
@@ -10,7 +11,7 @@ class Transaction < ActiveRecord::Base
 
   def self.for_an_account_name(account_name)
     all.select do |t|
-      t.account.name == account_name 
-    end 
-  end 
+      t.account.name == account_name
+    end
+  end
 end

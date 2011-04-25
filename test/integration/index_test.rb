@@ -53,10 +53,10 @@ class IndexTest < ActionDispatch::IntegrationTest
 
     transaction1 = transactions.first
     assert_equal "fubar1", transaction1.title
-    assert_equal "1000,00", transaction1.amount
+    assert_equal "$1,000.00", transaction1.amount
 
     transaction2 = transactions.last
     assert_equal "fubar2", transaction2.title
-    assert_equal "200,00", transaction2.amount
+    assert_equal "$200.00", transaction2.amount
   end
 end

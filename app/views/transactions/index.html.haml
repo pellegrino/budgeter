@@ -19,9 +19,10 @@
 %ul#transactions
   - @transactions.each do |transaction|
     %li
-      %span#title=transaction.title
-      %span#amount=transaction.amount
-      %span#account=transaction.account.name unless transaction.account.nil?
+      %span.title=transaction.title
+      %span.amount=number_to_currency transaction.amount
+      %span.account=transaction.account.name unless transaction.account.nil?
+      %span.tags=transaction.tag_list
   -
 #actions
   %p

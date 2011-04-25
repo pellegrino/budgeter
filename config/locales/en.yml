@@ -11,6 +11,7 @@ en:
         title: "Title"
         amount: "Total spent"
         account_id: "Account"
+        tag_list: "Tags"
       account:
         name: "Name"
         initial_balance: "Initial Balance"
@@ -20,6 +21,7 @@ en:
         title: "Quick description of this expense"
         amount: "How much? Ex: 1500.00"
         account_id: "Account which the money for this transaction is drawn from"
+        tag_list: "You can use them to classify your spending. Ex: groceries, fixed bills"
 
       account:
         name: "How is this account labeled? Credit Card, Joint account, my wallet?"

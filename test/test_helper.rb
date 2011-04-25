@@ -41,14 +41,16 @@ module Dom
   end
   class Transaction < Domino
     selector '#transactions li'
-    attribute :title, 'span#title'
-    attribute :amount, "span#amount"
-    attribute :account, "span#account"
+    attribute :title
+    attribute :amount
+    attribute :account
+    attribute :tags
 
     def self.create(params)
       within('form') do
         fill_in "transaction_title" , :with => params[:title]
         fill_in "transaction_amount", :with => params[:amount]
+        fill_in 'transaction_tag_list' , :with => params[:tags].join(',')
         page.select params[:account].name , :from => "transaction_account_id"
 
         click_button :transaction_submit

@@ -29,7 +29,7 @@ module Budgeter
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = "pt-BR"
 
     # JavaScript files you want as :defaults (application.js is always included).
     config.action_view.javascript_expansions[:defaults] = %w()
@@ -40,8 +40,8 @@ module Budgeter
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     config.generators do |g|
-        g.template_engine :haml
-	g.test_framework :test_unit, :fixture_replacement => :factory_girl
-     end
+      g.template_engine :haml
+      g.test_framework :test_unit, :fixture_replacement => :factory_girl
+    end
   end
 end

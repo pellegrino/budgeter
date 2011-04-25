@@ -29,6 +29,7 @@ GEM
       activemodel (= 3.0.7)
       activesupport (= 3.0.7)
     activesupport (3.0.7)
+    acts-as-taggable-on (2.0.6)
     akephalos (0.2.5)
       capybara (~> 0.4.0)
       jruby-jars
@@ -199,6 +200,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts-as-taggable-on
   akephalos
   database_cleaner
   domino

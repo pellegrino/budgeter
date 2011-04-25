@@ -7,6 +7,7 @@
       = form.inputs :title, :amount
       -# TODO: Replace this ugly call for something more elegant such as = form.input :account
       = form.input :account_id, :as => :select , :collection => @accounts
+      = form.input :tag_list
     -
     = form.buttons  do
       = form.commit_button :button_html => { :class => "primary" }
