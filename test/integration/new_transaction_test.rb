@@ -11,7 +11,7 @@ class NewTransactionTest < ActionDispatch::IntegrationTest
     Dom::Transaction.create :title => "foo" , :amount => "12345,00" , :account => @account
     transaction = Dom::Transaction.find_by_title /foo/
 
-    refute_nil transaction
+    assert_not_nil transaction
     assert_equal "foo", transaction.title
     assert_equal "12345.00", transaction.amount
     assert_equal "Credit Card", transaction.account

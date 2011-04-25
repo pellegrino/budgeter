@@ -4,6 +4,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'factory_girl'
+require 'test_benchmark' 
 
 class ActiveSupport::TestCase
   Money.default_currency = Money::Currency.new("USD")
@@ -16,6 +17,8 @@ end
 
 class ActionDispatch::IntegrationTest
   include Capybara
+  #  require 'akephalos' 
+  # Capybara.javascript_driver = :akephalos
   Capybara.app = Budgeter::Application
 end
 

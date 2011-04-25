@@ -11,7 +11,7 @@ class IndexTest < ActionDispatch::IntegrationTest
     Dom::Account.create :name => "Credit Card" , :initial_balance => "100,00" 
     
     visit transactions_path
-    refute page.has_content? I18n.t("transactions.index.no_account")
+    assert_false page.has_content? I18n.t("transactions.index.no_account")
     assert_equal "Credit Card", Dom::Account.all.first.name 
   end
 

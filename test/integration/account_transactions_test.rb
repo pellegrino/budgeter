@@ -19,6 +19,6 @@ class AccountTransactionTest < ActionDispatch::IntegrationTest
     @transaction3 = Factory(:transaction , :account => @other_account, :title => "t3")
 
     visit account_transactions_path("foo")
-    refute_empty Dom::Transaction.all
+    assert_false Dom::Transaction.all.empty? 
   end
 end
