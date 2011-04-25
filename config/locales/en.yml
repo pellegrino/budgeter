@@ -46,6 +46,8 @@ en:
     account:
       title: "Transactions for account %{name}"
       no_transaction: "No transactions for this account. Why don't you start by creating your first transaction?"
+      back_link: "Go back to all transactions"
+
 
   money:
     conversion:

@@ -6,7 +6,7 @@
     %ul#accounts
       - @accounts.each do |account|
         %li
-          %span#name=account.name
+          .name=link_to account.name, account_transactions_path(account.name)
       -
   - else
     %p.explanation

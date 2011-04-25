@@ -4,7 +4,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'factory_girl'
-require 'test_benchmark' 
+require 'test_benchmark'
 
 class ActiveSupport::TestCase
   Money.default_currency = Money::Currency.new("USD")
@@ -17,17 +17,20 @@ end
 
 class ActionDispatch::IntegrationTest
   include Capybara
-  #  require 'akephalos' 
-  # Capybara.javascript_driver = :akephalos
   Capybara.app = Budgeter::Application
 end
 
 module Dom
   class Account < Domino
-    selector '#accounts li'
-    attribute :name, "#name"
+    selector '#menu #accounts li'
+
+    def name
+      node.text.strip
+    end
 
     def self.create(params)
+      visit '/accounts/new' unless current_url == '/accounts/new'
+
       within('form') do
         fill_in "account_name" , :with => params[:name]
         fill_in "account_initial_balance", :with => params[:initial_balance]
