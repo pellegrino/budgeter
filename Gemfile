@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.6'
+gem 'rails', '3.0.7'
 gem 'haml-rails'
 gem 'sqlite3'
 gem "money"
@@ -17,6 +17,7 @@ group :test do
   gem 'test-unit' 
   gem 'akephalos' 
 end
+gem 'evergreen', :require => 'evergreen/rails', :group => [:development, :test] 
 gem 'metric_fu' , :group => [:development, :test]
 gem 'factory_girl_rails' , :group => [:development, :test]
 gem "rails3-generators", :group => [:development]

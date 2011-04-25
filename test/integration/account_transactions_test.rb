@@ -5,7 +5,6 @@ class AccountTransactionTest < ActionDispatch::IntegrationTest
   test "displays blank slate when there is no transaction for this account" do
     visit account_transactions_path("foo")
     assert_empty Dom::Transaction.all
-
     assert page.has_content? I18n.t("transactions.account.no_transaction")
   end
 
@@ -19,6 +18,13 @@ class AccountTransactionTest < ActionDispatch::IntegrationTest
     @transaction3 = Factory(:transaction , :account => @other_account, :title => "t3")
 
     visit account_transactions_path("foo")
-    assert_false Dom::Transaction.all.empty? 
+
+    transactions = Dom::Transaction.all
+    assert_equal 2, transactions.count
+    assert_equal "t1" , transactions.first.title
+    assert_equal "foo" , transactions.first.account
+
+    assert_equal "t2" , transactions.last.title
+    assert_equal "foo" , transactions.last.account
   end
 end

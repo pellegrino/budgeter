@@ -6,7 +6,9 @@
   %ul#transactions
     - @transactions.each do |transaction|
       %li
-        = transaction.title
+        %span#title=transaction.title
+        %span#amount=transaction.amount
+        %span#account=transaction.account.name
     -
 - else
   = t("transactions.account.no_transaction")
