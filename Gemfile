@@ -18,6 +18,7 @@ group :test do
   gem 'test-unit'
   gem 'akephalos'
 end
+gem 'heroku' , :group => :development 
 gem 'evergreen', :require => 'evergreen/rails', :group => [:development, :test]
 gem 'metric_fu' , :group => [:development, :test]
 gem 'factory_girl_rails' , :group => [:development, :test]

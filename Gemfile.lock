@@ -94,12 +94,17 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     has_scope (0.5.0)
+    heroku (1.6.3)
+      json (>= 1.1.0)
+      launchy (>= 0.3.2)
+      rest-client (>= 1.2.0, < 2.0.0)
     hirb (0.4.5)
     i18n (0.5.0)
     inherited_resources (1.2.2)
       has_scope (~> 0.5.0)
       responders (~> 0.6.0)
     jruby-jars (1.6.1)
+    json (1.5.1)
     json_pure (1.5.1)
     launchy (0.4.0)
       configuration (>= 0.0.5)
@@ -165,6 +170,8 @@ GEM
       ruby_parser (~> 2.0)
       sexp_processor (~> 3.0)
     responders (0.6.2)
+    rest-client (1.6.1)
+      mime-types (>= 1.16)
     roodi (2.1.0)
       ruby_parser
     rr (1.0.2)
@@ -209,6 +216,7 @@ DEPENDENCIES
   flutie
   formtastic
   haml-rails
+  heroku
   inherited_resources
   metric_fu
   minitest

@@ -5,7 +5,8 @@
  - Filter transactions per account (Ok)
  - Tag transactions (OK)
  - Handle currencies correctly (format in R$, $, $u...) (OK)
- - Basic css styling
+ - Basic css styling (OK)
+ - Calculate balance for each account 
  - Login
  - Multiple users
  - Basic reporting about spending
