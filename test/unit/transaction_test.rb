@@ -32,16 +32,4 @@ class TransactionTest < ActiveModel::TestCase
     end
   end
 
-  test "retrieve all transactions for an account name" do
-    @wallet = Factory(:account, :name => "wallet")
-    @other_account = Factory(:account)
-    Factory(:transaction, :account => @wallet)
-    Factory(:transaction, :account => @other_account)
-    Factory(:transaction, :account => @other_account)
-
-    @transactions_for_wallet = Transaction.for_an_account_name("wallet")
-    assert_equal 1, @transactions_for_wallet.size
-  end
-
-
 end

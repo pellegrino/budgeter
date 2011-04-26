@@ -1,20 +1,14 @@
 %h1
   = t "transactions.account.title", :name => "foo"
 
+#actions
+  = link_to t("transactions.new.href"), new_transaction_path("transaction[account_id]" => @account.id)
+  = link_to t("transactions.account.back_link"), root_path
 
 - if @transactions.present?
-  %ul#transactions
-    - @transactions.each do |transaction|
-      %li
-        %span.title=transaction.title
-        %span.amount=transaction.amount
-        %span.account=transaction.account.name
-        %span.tags=transaction.tag_list
-    -
+  = render "transactions" , :locals => { :transactions => @transactions }
+
 - else
   = t("transactions.account.no_transaction")
 -
 
-
-#actions
-  = link_to t("transactions.account.back_link"), root_path

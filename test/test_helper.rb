@@ -7,8 +7,8 @@ require 'factory_girl'
 require 'test_benchmark'
 
 class ActiveSupport::TestCase
+  include RR::Adapters::TestUnit
   Money.default_currency = Money::Currency.new("USD")
-  # Add more helper methods to be used by all tests here...
 end
 
 class ActionController::TestCase
@@ -40,7 +40,7 @@ module Dom
     end
   end
   class Transaction < Domino
-    selector '#transactions li'
+    selector '#transactions tbody tr'
     attribute :title
     attribute :amount
     attribute :account

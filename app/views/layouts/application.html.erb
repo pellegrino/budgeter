@@ -7,9 +7,37 @@
 </head>
 <body>
   <div id="container">
+    <div id="header">
+      <h1><%= link_to "Budgeter", root_path %></h1>
+      <h2> <%= t "header.subtitle" %> </h2>
+    </div>
     <div id="main">
-      <%= yield %>
-    </div> 
+      <div id="menu">
+        <% if @accounts.present? %>
+        <ul id="accounts">
+          <li>
+            <%=link_to_unless_current t("transactions.list.link"), transactions_path %>
+          </li>
+          <% @accounts.each do |account| %>
+          <li>
+            <%=link_to_unless_current account.name,
+            account_transactions_path(account.name) %>
+          </li>
+          <% end %>
+        <% else %>
+          <p><%= t "transactions.index.no_account" %> </p>
+        <% end %>
+        <%= yield :nav %>
+      </div>
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer" class="clear">
+      <p>
+        <%= t "footer.info" %>
+      </p>
+    </div>
   </div>
   <%= javascript_include_tag :all %>
 </body>

@@ -16,6 +16,7 @@ class NewTransactionTest < ActionDispatch::IntegrationTest
     assert_equal "$12,345.00", transaction.amount
     assert_equal "Credit Card", transaction.account
     assert_equal "foo, bar", transaction.tags
+
   end
 
   test "cancels this transactions and go back to transactions listing" do

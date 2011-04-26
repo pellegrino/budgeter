@@ -31,6 +31,9 @@
         name: "Qual é o nome desta conta? Cartão de crédito, carteira, conta conjunta?"
         initial_balance: "Quanto tem nesta conta agora?"
 
+  header:
+    subtitle: "Gerenciador financeiro grandma friendly"
+
   accounts:
     new:
       title: "Crie uma nova conta"
@@ -40,6 +43,8 @@
       explanation: "Aqui estão todas as suas contas"
 
   transactions:
+    list:
+      link: "Todas"
     index:
       title: "Transações"
       explanation: "Aqui estão as últimas transações que você informou ao Budgeter. Você pode utilizar o link abaixo para 'Registrar uma nova transação', dentro de pouco tempo, você vai poder organizar várias contas aqui."
@@ -57,6 +62,8 @@
   money:
     conversion:
       error: "Não foi possível converter %{value} em Reais"
+  footer:
+    info: "Budgeter é uma app open source. Espero que você esteja em boa forma financeira. By @pellegrino (http://github.com/pellegrino)"
 
   #### Tradução padrão do ruby on rails
   # pt-BR translations for Ruby on Rails

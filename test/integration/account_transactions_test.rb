@@ -3,6 +3,8 @@ require 'test_helper'
 class AccountTransactionTest < ActionDispatch::IntegrationTest
 
   test "displays blank slate when there is no transaction for this account" do
+    Dom::Account.create :name => "foo"
+
     visit account_transactions_path("foo")
     assert_empty Dom::Transaction.all
     assert page.has_content? I18n.t("transactions.account.no_transaction")
@@ -26,5 +28,13 @@ class AccountTransactionTest < ActionDispatch::IntegrationTest
 
     assert_equal "t2" , transactions.last.title
     assert_equal "foo" , transactions.last.account
+  end
+
+  test 'shows the create form with the account already selected' do
+    @account = Factory(:account, :name => "foo")
+    visit account_transactions_path("foo")
+
+    page.click_link I18n.t("transactions.new.href")
+    assert page.has_xpath?("//option[@selected = 'selected' and contains(string(), foo)]")
   end
 end

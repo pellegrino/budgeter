@@ -1,8 +1,12 @@
 body {
     background-color: #DADADA;
+    color: #333;
+}
+h1,h2,h3,h4,h5,h6 {
+    color: #333;
 }
 #container {
-    width: 960px; 
+    width: 960px;
     margin: 0 auto;
     padding: 1.2em;
     background-color: #FFF;
@@ -13,12 +17,54 @@ body {
     border-bottom-right-radius: 1em 1em;
     border-bottom-left-radius: 1em 1em;
 }
-
+#header {
+    padding: 1em;
+}
+#header h1 a {
+    text-decoration: none;
+    color: #333;
+}
+#header h2 {
+    font-size: 1.02em;
+    font-style: italic;
+    color: #999;
+    letter-spacing: 0.005em;
+}
 #main {
     padding: 1em;
+}
+
+#main #menu {
+    float: left;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 14.2857%;
+}
+#main #menu li {
+    font-size: 1.4em;
+    list-style: none;
+    color: #224400;
+}
+#main #menu li a:hover {
+    color: #224400;
+}
+#main #content {
+    float: right;
+    width: 85.7143%;
+}
+#main #content table#transactions tr:hover {
+    background-color: #F7F7F7;
 }
 
 #main .explanation {
     font-size: 1.2em;
     font-family: Helvetica;
+}
+#footer {
+    padding: 1em;
+    font-size: 0.9em;
+    color: #999;
+}
+.clear {
+    clear: both;
 }

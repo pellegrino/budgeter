@@ -1,0 +1,15 @@
+%table#transactions
+  %thead
+    %tr
+      %th=t "transactions.index.table.head.title"
+      %th=t "transactions.index.table.head.amount"
+      %th=t "transactions.index.table.head.account"
+      %th=t "transactions.index.table.head.tags"
+  %tbody
+    - @transactions.each do |transaction|
+      %tr{:class => cycle('odd', 'even') }
+        %td.title=transaction.title
+        %td.amount=number_to_currency transaction.amount
+        %td.account=transaction.account.name unless transaction.account.nil?
+        %td.tags=transaction.tag_list
+    -

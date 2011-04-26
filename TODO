@@ -4,7 +4,8 @@
  - Associate a transaction to an account  (OK)
  - Filter transactions per account (Ok)
  - Tag transactions (OK)
- - Handle currencies correctly (format in R$, $, $u...)
+ - Handle currencies correctly (format in R$, $, $u...) (OK)
+ - Basic css styling
  - Login
  - Multiple users
  - Basic reporting about spending

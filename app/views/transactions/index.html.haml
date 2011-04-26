@@ -1,29 +1,11 @@
 %h1
   = t "transactions.index.title"
 
-#menu
-  - if @accounts.present?
-    %ul#accounts
-      - @accounts.each do |account|
-        %li
-          .name=link_to account.name, account_transactions_path(account.name)
-      -
-  - else
-    %p.explanation
-      = t "transactions.index.no_account"
-  -
-
 %p.explanation
   = t "transactions.index.explanation"
 
-%ul#transactions
-  - @transactions.each do |transaction|
-    %li
-      %span.title=transaction.title
-      %span.amount=number_to_currency transaction.amount
-      %span.account=transaction.account.name unless transaction.account.nil?
-      %span.tags=transaction.tag_list
-  -
+= render "transactions", :locals => { :accounts => @accounts }
+
 #actions
   %p
     = link_to t("transactions.new.href") , new_transaction_path

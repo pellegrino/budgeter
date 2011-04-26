@@ -26,6 +26,8 @@ en:
       account:
         name: "How is this account labeled? Credit Card, Joint account, my wallet?"
         initial_balance: "How many bucks are there right now?"
+  header:
+    subtitle: "Grandma approved budget tracker"
 
   accounts:
     new:
@@ -36,11 +38,18 @@ en:
       explanation: "Here are all your accounts"
 
   transactions:
+    list:
+      link: "All"
     index:
       title: "Transactions"
       explanation: "Here are the last transactions you've recorded at Budgeter. You can use the link below to 'Record a new transaction', and *really* soon you will be able to track multiple accounts here."
       no_account: "It seems you don't have any accounts registered at budgeter, why don't you start by <a href='%{create_account_url}'>creating one</a>?"
-
+      table:
+        head:
+          title: "Transaction"
+          amount: "Amount"
+          account: "Account"
+          tags: "Tags"
     new:
       href: "Record a new transaction"
       title: "Record a new transaction"
@@ -54,3 +63,5 @@ en:
   money:
     conversion:
       error: "Can't convert %{value} to Money"
+  footer:
+    info: "Budgeter is an open source app. I wish you a good financial health and that Budgeter may help you achieving it. by @pellegrino (http://github.com/pellegrino)"
