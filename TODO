@@ -6,14 +6,13 @@
  - Tag transactions (OK)
  - Handle currencies correctly (format in R$, $, $u...) (OK)
  - Basic css styling (OK)
- - Calculate balance for each account 
+ - Calculate balance for each account
  - Login
  - Multiple users
  - Basic reporting about spending
  - Handling recurring payments/spending
  - Improve overall responsiveness of the app (Ajax filtering of
    transactions, for instance)
-
 
  - General Issues
          - Asset packaging

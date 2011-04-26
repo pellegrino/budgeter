@@ -14,10 +14,4 @@ class TransactionsController < InheritedResources::Base
       redirect_to root_path
     end
   end
-
-  protected
-  def fetch_accounts
-    @accounts = Account.all
-  end
-
 end
