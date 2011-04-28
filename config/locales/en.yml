@@ -12,6 +12,7 @@ en:
         amount: "Total spent"
         account_id: "Account"
         tag_list: "Tags"
+        occurred_date: "Ocurred date"
       account:
         name: "Name"
         initial_balance: "Initial Balance"
@@ -22,6 +23,7 @@ en:
         amount: "How much? Ex: 1500.00"
         account_id: "Account which the money for this transaction is drawn from"
         tag_list: "You can use them to classify your spending. Ex: groceries, fixed bills"
+        occurred_date: "When did you did spend that?"
 
       account:
         name: "How is this account labeled? Credit Card, Joint account, my wallet?"
@@ -42,7 +44,7 @@ en:
       link: "All"
     index:
       title: "Transactions"
-      explanation: "Here are the last transactions you've recorded at Budgeter. You can use the link below to 'Record a new transaction', and *really* soon you will be able to track multiple accounts here."
+      explanation: "Here are the last transactions you've recorded at Budgeter. You can use the link below to 'Record a new transaction'"
       no_account: "It seems you don't have any accounts registered at budgeter, why don't you start by <a href='%{create_account_url}'>creating one</a>?"
       table:
         head:
@@ -63,5 +65,8 @@ en:
   money:
     conversion:
       error: "Can't convert %{value} to Money"
+  main:
+    menu:
+      header: "My accounts"
   footer:
     info: "Budgeter is an open source app. I wish you a good financial health and that Budgeter may help you achieving it. by @pellegrino (http://github.com/pellegrino)"

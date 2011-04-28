@@ -5,6 +5,14 @@ class TransactionTest < ActiveModel::TestCase
     @transaction = Transaction.new
   end
 
+  test "assigns the occurred date as today as a default" do
+    assert_equal Date.today, @transaction.occurred_date
+
+    transaction_with_different_occurred_date = Transaction.new :occurred_date => Date.yesterday
+
+    assert_false Date.today.eql? transaction_with_different_occurred_date.occurred_date
+  end
+
 
   test "tag transactions" do
     @transaction.tag_list = "shopping, groceries"

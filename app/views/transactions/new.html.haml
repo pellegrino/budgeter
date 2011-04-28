@@ -4,7 +4,7 @@
   = semantic_form_for @transaction  do |form|
     = form.semantic_errors
     = form.inputs :transaction_general_info do
-      = form.inputs :title, :amount
+      = form.inputs :title, :amount, :occurred_date
       = form.input :account_id, :as => :select , :collection => @accounts
       = form.input :tag_list
     -

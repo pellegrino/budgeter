@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110425224938) do
+ActiveRecord::Schema.define(:version => 20110428225339) do
 
   create_table "accounts", :force => true do |t|
     t.string   "name"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20110425224938) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "account_id"
+    t.date     "occurred_date"
   end
 
   add_index "transactions", ["account_id"], :name => "index_transactions_on_account_id"
