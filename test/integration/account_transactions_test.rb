@@ -37,4 +37,14 @@ class AccountTransactionTest < ActionDispatch::IntegrationTest
     page.click_link I18n.t("transactions.new.href")
     assert page.has_xpath?("//option[@selected = 'selected' and contains(string(), foo)]")
   end
+
+  test "shows this account's balance" do
+    Dom::Account.create :name => "foo" , :initial_balance => 10
+    Dom::Transaction.create  :title => "t1", :amount => 2, :account => "foo"
+    Dom::Transaction.create  :title => "t2", :amount => 4, :account => "foo"
+
+    visit account_transactions_path("foo")
+
+    assert_equal "4.00", Dom::TransactionsAccount.first.balance
+  end
 end

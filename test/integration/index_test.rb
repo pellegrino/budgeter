@@ -6,7 +6,6 @@ class IndexTest < ActionDispatch::IntegrationTest
     Factory(:account, :name => "wallet", :initial_balance => "100,00")
     Factory(:account, :name => "bank", :initial_balance => "10000,00")
 
-
     visit root_path
     accounts = Dom::Account.all
     assert_equal 3,  accounts.count
@@ -40,10 +39,9 @@ class IndexTest < ActionDispatch::IntegrationTest
     assert page.has_css?("a[href='#{new_transaction_path}']")
   end
 
-  test "shows a navigation bar with all transactions already recorded" do
+  test "shows all transactions already recorded" do
     Factory(:transaction, :title => "fubar1" , :amount => 1000.00)
     Factory(:transaction, :title => "fubar2", :amount => 200.00)
-
     visit transactions_path
 
     transactions = Dom::Transaction.all

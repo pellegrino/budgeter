@@ -8,7 +8,7 @@ class NewTransactionTest < ActionDispatch::IntegrationTest
   end
 
   test "create a transaction and displays it after" do
-    Dom::Transaction.create :title => "foo" , :amount => "12345,00" , :account => @account, :tags => ['foo' , 'bar']
+    Dom::Transaction.create :title => "foo" , :amount => "12345,00" ,  :account => @account.name, :tags => ['foo' , 'bar']
     transaction = Dom::Transaction.find_by_title /foo/
 
     assert_not_nil transaction
@@ -16,7 +16,6 @@ class NewTransactionTest < ActionDispatch::IntegrationTest
     assert_equal "$12,345.00", transaction.amount
     assert_equal "Credit Card", transaction.account
     assert_equal "foo, bar", transaction.tags
-
   end
 
   test "cancels this transactions and go back to transactions listing" do

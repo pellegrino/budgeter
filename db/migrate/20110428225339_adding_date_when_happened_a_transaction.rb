@@ -1,9 +1,9 @@
 class AddingDateWhenHappenedATransaction < ActiveRecord::Migration
   def self.up
-    add_column :transactions,  :occurred_date, :date
+    rename_column :transactions,  :date_ocurred, :occurred_date
   end
 
   def self.down
-    remove_column :transactions , :occurred_date
+    rename_column :transactions , :occurred_date, :date_ocurred
   end
 end

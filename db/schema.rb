@@ -43,11 +43,10 @@ ActiveRecord::Schema.define(:version => 20110428225339) do
     t.string   "title"
     t.integer  "cents"
     t.string   "currency"
-    t.date     "date_ocurred"
+    t.date     "occurred_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "account_id"
-    t.date     "occurred_date"
   end
 
   add_index "transactions", ["account_id"], :name => "index_transactions_on_account_id"

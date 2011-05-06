@@ -14,9 +14,9 @@ class CreateAccounts < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :transactions , :account_id , :integer
     remove_index :transactions, :account_id
+    remove_index :accounts, :name
+    remove_column :transactions , :account_id , :integer
     drop_table :accounts
-
   end
 end

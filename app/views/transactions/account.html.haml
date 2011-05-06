@@ -1,6 +1,10 @@
 %h1
   = t "transactions.account.title", :name =>  @account.name
 
+#account-details
+  %h3= t("formtastic.accountc.balance")
+  %p.balance= @account.balance
+
 #actions
   = link_to t("transactions.new.href"), new_transaction_path("transaction[account_id]" => @account.id)
   = link_to t("transactions.account.back_link"), root_path

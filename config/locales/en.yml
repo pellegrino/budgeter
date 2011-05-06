@@ -13,8 +13,10 @@ en:
         account_id: "Account"
         tag_list: "Tags"
         occurred_date: "Ocurred date"
+
       account:
         name: "Name"
+        balance: "Balance"
         initial_balance: "Initial Balance"
 
     hints:

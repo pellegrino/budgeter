@@ -7,8 +7,10 @@
  - Handle currencies correctly (format in R$, $, $u...) (OK)
  - Basic css styling (OK)
  - Calculate balance for each account
+ - Handle deposits
  - Login
  - Multiple users
+ - Transfering between accounts  (example: Withdraw from joint account to wallet)
  - Basic reporting about spending
  - Handling recurring payments/spending
  - Improve overall responsiveness of the app (Ajax filtering of

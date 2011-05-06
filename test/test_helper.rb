@@ -21,13 +21,16 @@ class ActionDispatch::IntegrationTest
 end
 
 module Dom
+  class TransactionsAccount < Domino
+    selector "#account-details"
+    attribute :balance
+  end
   class Account < Domino
     selector '#menu #accounts li'
 
     def name
       node.text.strip
     end
-
     def self.create(params)
       visit '/accounts/new' unless current_url == '/accounts/new'
 
@@ -45,13 +48,16 @@ module Dom
     attribute :amount
     attribute :account
     attribute :tags
+    attribute :occurred_date
 
     def self.create(params)
+      visit '/transactions/new' unless current_url == '/transactions/new'
+
       within('form') do
         fill_in "transaction_title" , :with => params[:title]
         fill_in "transaction_amount", :with => params[:amount]
-        fill_in 'transaction_tag_list' , :with => params[:tags].join(',')
-        page.select params[:account].name , :from => "transaction_account_id"
+        fill_in 'transaction_tag_list' , :with => params[:tags].join(',') if params[:tags].present?
+        page.select params[:account] , :from => "transaction_account_id"
 
         click_button :transaction_submit
       end
