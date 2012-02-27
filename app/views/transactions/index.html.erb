@@ -5,13 +5,13 @@
 <div id="new-transaction"> 
   <%= form_for @transaction do |f| %>
     <p>
-    <%= f.label      :name %> 
-    <%= f.text_field :name %> 
+      <%= f.label      :name %> 
+      <%= f.text_field :name %> 
     </p>
-    
+
     <p>
-    <%= f.label      :amount %> 
-    <%= f.text_field :amount %> 
+      <%= f.label      :amount %> 
+      <%= f.text_field :amount %> 
     </p>
 
     <p>
@@ -20,9 +20,20 @@
   <% end %> 
 </div>
 
-<div id="transactions"> 
-  <% @transactions.each do |transaction| %>
-    <p> <%= transaction.name %>                     </p>
-    <p> <%= number_to_currency transaction.amount %></p>
-  <% end %>
-</div>
+<table id="transactions">
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th>Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <td><%= transaction.name %></td>
+        <td><%= number_to_currency transaction.amount %></td>
+        <td><%= distance_of_time_in_words_to_now transaction.created_at %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
