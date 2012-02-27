@@ -3,5 +3,5 @@ Budgeter::Application.routes.draw do
   resources :accounts 
 
 
-  root :to => "transactions#index"
+  root :to => "accounts#index"
 end

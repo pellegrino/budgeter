@@ -1,0 +1,9 @@
+<h1>Accounts</h1>
+
+<ul id="account-list" class="unstyled">
+  <% @accounts.each do |account| %>
+    <li>
+    <h3><%= link_to account.name , account_path(account) %></h3>
+    </li>
+  <% end %> 
+</ul>

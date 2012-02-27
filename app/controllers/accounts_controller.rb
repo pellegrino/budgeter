@@ -1,6 +1,12 @@
 class AccountsController < ApplicationController
+
   def new
     @account     = Account.new
+    @transaction = Transaction.new
+  end 
+
+  def index
+    @accounts = Account.all
     @transaction = Transaction.new
   end 
 

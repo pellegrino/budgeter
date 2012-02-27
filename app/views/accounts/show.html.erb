@@ -1,1 +1,29 @@
 <p> <%= flash[:notice] %> </p>
+
+<div id="transactions">
+  <h1>Transactions in <%= @account.name %> Account</h1>
+  <table class="table table-striped" id="transactions">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Amount</th>
+        <th>Account</th>
+        <th>Created at</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @account.transactions.each do |t| %>
+        <tr>
+          <td><%= link_to t.name, transaction_path(t) %></td>
+          <td><%= number_to_currency t.amount %></td>
+          <td><%= @account.name %></td>
+          <td><%= distance_of_time_in_words_to_now t.created_at %></td>
+          <td>
+            <%= link_to 'Destroy', transaction_path(t), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

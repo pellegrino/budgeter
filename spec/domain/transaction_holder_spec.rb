@@ -6,7 +6,6 @@ class Transaction ; end
 describe TransactionHolder do
 
   describe "#create_transaction" do
-
     let(:params) { { 'foo' => 'bar' } }
 
     it "creates a transaction with given params"  do
@@ -22,7 +21,6 @@ describe TransactionHolder do
   end 
 
   describe "#all" do
-
     it "list every transaction"  do
       all_transactions = %q{ foo bar baz }
       Transaction.stub(:all) { all_transactions  }
