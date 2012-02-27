@@ -31,11 +31,12 @@ describe AccountsController do
 
 
  describe "GET 'show'" do
+   let(:account) { mock_model(Account) } 
 
    it "fetches the requested account"  do
-     Account.stub(:find).with('42') { 'foo' } 
+     Account.stub(:find).with('42') { account } 
      get :show , :id => '42'
-     assigns[:account].should == 'foo'
+     assigns[:account].should == account
    end 
 
  end 

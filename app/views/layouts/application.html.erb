@@ -50,9 +50,10 @@
                 <%= f.input :transaction_type , :collection => [["Expense", :expense],
                                                                 [ "Deposit", :deposit]] , 
                                                                 :as => :radio_buttons %>
-                <%= f.input :name %>
-                <%= f.input :amount %>
-                <%= f.submit "Save" %>
+                <%= f.input       :name %>
+                <%= f.input       :amount %>
+                <%= f.association :account %>
+                <%= f.submit      "Save" %>
               <% end %> 
             </div> <!-- /#new-transaction -->
           </div><!--/.well -->

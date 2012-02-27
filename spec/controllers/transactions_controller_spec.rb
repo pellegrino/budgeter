@@ -42,4 +42,28 @@ describe TransactionsController do
 
   end 
 
+
+  describe "DELETE 'destroy'" do
+    before do
+      TransactionHolder.stub(:delete_transaction).with(:id => '1') { true } 
+    end 
+
+
+    it "removes given transaction" do
+      TransactionHolder.should_receive(:delete_transaction).with(:id => '42')
+      delete :destroy, :id => '42'
+    end 
+
+    it "sets the flash" do
+      delete :destroy, :id => '1'
+      should set_the_flash
+    end 
+
+    it "redirects to transaction index"  do
+      delete :destroy, :id => '1'
+      response.should redirect_to(transactions_path)
+    end 
+
+  end 
+
 end

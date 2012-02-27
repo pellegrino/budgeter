@@ -22,4 +22,5 @@ feature "Creating transactions", %q{
       page.should have_content "$10.00"
     end 
   end 
+  
 end 

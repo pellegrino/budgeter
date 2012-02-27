@@ -29,4 +29,13 @@ describe TransactionHolder do
       TransactionHolder.all.should == all_transactions
     end 
   end 
+
+  describe "#delete_transaction" do
+    let(:transaction) { Transaction.new } 
+    it "destroys given transaction" do
+      Transaction.stub(:find).with('42') { transaction } 
+      transaction.stub(:destroy).and_return('true')
+      TransactionHolder.delete_transaction(:id => '42').should == 'true'
+    end 
+  end 
 end 

@@ -8,4 +8,9 @@ class TransactionHolder
     Transaction.all
   end 
 
+  def self.delete_transaction(params)
+    transaction = Transaction.find params[:id]
+    transaction.destroy
+  end 
+
 end 

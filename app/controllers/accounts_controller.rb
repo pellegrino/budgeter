@@ -4,7 +4,6 @@ class AccountsController < ApplicationController
     @transaction = Transaction.new
   end 
 
-
   def create
     @account = Account.create(params[:account])
     if @account 
@@ -13,7 +12,7 @@ class AccountsController < ApplicationController
   end 
 
   def show
-    @account = Account.find params[:id]
-    @transaction = Transaction.new
+    @account     = Account.find params[:id]
+    @transaction = Transaction.new(:account => @account)
   end 
 end 

@@ -7,6 +7,7 @@
     <tr>
       <th>Name</th>
       <th>Amount</th>
+      <th>Account</th>
       <th>Created at</th>
       <th>Actions</th>
     </tr>
@@ -16,9 +17,9 @@
       <tr>
         <td><%= link_to transaction.name, transaction_path(transaction) %></td>
         <td><%= number_to_currency transaction.amount %></td>
+        <td><%= transaction.account_name %></td>
         <td><%= distance_of_time_in_words_to_now transaction.created_at %></td>
         <td>
-          <%= link_to 'Edit', edit_transaction_path(transaction), :class => 'btn btn-mini' %>
           <%= link_to 'Destroy', transaction_path(transaction), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
