@@ -1,39 +1,35 @@
-<h1>Transactions#index</h1>
-<p>Find me in app/views/transactions/index.html.erb</p>
-
-<%= flash[:notice] %>
-<div id="new-transaction"> 
-  <%= form_for @transaction do |f| %>
-    <p>
-      <%= f.label      :name %> 
-      <%= f.text_field :name %> 
-    </p>
-
-    <p>
-      <%= f.label      :amount %> 
-      <%= f.text_field :amount %> 
-    </p>
-
-    <p>
-      <%= f.submit "Save"%>
-    </p>
+<div id="new-transaction">
+  <%= simple_form_for @transaction do |f| %>
+    <%= f.input :name %>
+    <%= f.input :amount %>
+    <%= f.submit "Save" %>
   <% end %> 
 </div>
-
-<table id="transactions">
+<p>
+  <%= flash[:notice] %>
+</p>
+<h1>Transactions</h1>
+<table class="table table-striped" id="transactions">
   <thead>
     <tr>
-      <th>Description</th>
+      <th>Name</th>
       <th>Amount</th>
+      <th>Created at</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>
     <% @transactions.each do |transaction| %>
       <tr>
-        <td><%= transaction.name %></td>
+        <td><%= link_to transaction.name, transaction_path(transaction) %></td>
         <td><%= number_to_currency transaction.amount %></td>
-        <td><%= distance_of_time_in_words_to_now transaction.created_at %> </td>
+        <td><%= distance_of_time_in_words_to_now transaction.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_transaction_path(transaction), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', transaction_path(transaction), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
