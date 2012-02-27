@@ -39,10 +39,13 @@
     </div>
 
     <div class="container-fluid">
+        <%= render "shared/flash_messages" %>
       <div class="row-fluid">
+
         <div class="span8">
           <%= yield %>
         </div>
+
         <div class="span4">
           <div class="well sidebar-nav">
             <div id="new-transaction">
