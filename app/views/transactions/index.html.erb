@@ -1,0 +1,28 @@
+<h1>Transactions#index</h1>
+<p>Find me in app/views/transactions/index.html.erb</p>
+
+<%= flash[:notice] %>
+<div id="new-transaction"> 
+  <%= form_for @transaction do |f| %>
+    <p>
+    <%= f.label      :name %> 
+    <%= f.text_field :name %> 
+    </p>
+    
+    <p>
+    <%= f.label      :amount %> 
+    <%= f.text_field :amount %> 
+    </p>
+
+    <p>
+      <%= f.submit "Save"%>
+    </p>
+  <% end %> 
+</div>
+
+<div id="transactions"> 
+  <% @transactions.each do |transaction| %>
+    <p> <%= transaction.name %>                     </p>
+    <p> <%= number_to_currency transaction.amount %></p>
+  <% end %>
+</div>
