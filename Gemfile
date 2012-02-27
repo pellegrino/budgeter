@@ -6,6 +6,9 @@ gem 'jquery-rails'
 gem 'simple_form'
 gem "twitter-bootstrap-rails"
 
+gem 'omniauth'
+gem 'omniauth-twitter'
+
 
 group :assets do
   gem 'coffee-rails', '~> 3.2.1'
