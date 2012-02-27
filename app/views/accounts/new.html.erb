@@ -1,0 +1,7 @@
+<h1> Create a new account</h1>
+
+<%= simple_form_for @account do |f| %>
+  <%= f.input :name %>
+  <%= f.input :starting_balance %>
+  <%= f.submit "Save" %>
+<% end %>
