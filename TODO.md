@@ -1,5 +1,6 @@
 # TODO
 
+* Order by last created 
 * Track each account balance
 * Tag transactions  
   * Auto complete tags as you type 
